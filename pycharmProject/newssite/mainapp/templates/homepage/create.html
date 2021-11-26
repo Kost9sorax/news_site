@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма по добавлению статьи</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.title }}<br>
+    {{ form.full_text }}<br>
+    {{ form.author }}<br>
+    {{ form.tag }}<br>
+    {{ form.date }}<br>
+    {{ form.image }}<br>
+    <span>{{ error }}</span><br>
+    <button type="submit">Добавить статью</button>
+</form>
+</body>
+</html>
