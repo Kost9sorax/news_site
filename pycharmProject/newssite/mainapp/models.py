@@ -1,5 +1,6 @@
 from django.db import models
 from taggit.managers import TaggableManager
+import datetime
 
 
 class Articles(models.Model):
@@ -7,7 +8,7 @@ class Articles(models.Model):
     full_text = models.TextField('Статья')
     author = models.CharField('Автор', max_length=50)
     tag = TaggableManager()
-    date = models.DateTimeField('Дата')
+    date = models.DateTimeField('Дата', default=datetime.datetime.now)
     image = models.ImageField('Добавить изображение', upload_to='images')
 
     def photo_url(self):
