@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="{% url 'mainapp:create' %}">Создать статью</a>
+    {% if news %}
+        {% for i in news%}
+            <h1>{{ i.title }}</h1>
+            <p class="tags">Tags:
+            {% for tag in i.tag.all %}
+                <a href="{% url 'mainapp:tag_list' tag %}">{{ tag }}</a>
+            {% endfor %}
+            </p>
+            <p>Published {{ i.date }} by {{ i.author }}</p>
+            <p>{{ i.full_text }}</p>
+            <img src="{{ i.image.url }}" alt="Oops">
+        {% endfor %}
+    {% else %}
+        <h3>Новостей нет(</h3>
+    {% endif %}
+</body>
+</html>
