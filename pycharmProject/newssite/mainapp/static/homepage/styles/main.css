@@ -1,0 +1,72 @@
+body {
+    background-color: #2f3437;
+    padding: 50px;
+}
+
+h1 {
+    color: #ebecec;
+}
+
+p {
+    color: #cccdcd;
+}
+
+.main_text {
+    font-size: 25px;
+}
+
+.breadcrumb {
+    color: #cccdcd;
+}
+
+.news {
+    margin-top: 50px;
+    padding: 25px;
+    width: 100%;
+    background-color: #3f4447;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px 0px #242829;
+}
+
+.header {
+    margin-bottom: 25px;
+}
+
+textarea {
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    width: 800px;
+    margin-bottom: 15px;
+}
+
+input, .input-group{
+    padding-left: 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    width: 400px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.form-control {
+    height: 38px;
+}
+
+#content {
+    text-align: center;
+}
+
+.form {
+    margin-top: 50px;
+}
+
+.btn-danger {
+    margin-top: 40px;
+}
