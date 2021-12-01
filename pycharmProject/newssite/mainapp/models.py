@@ -8,8 +8,8 @@ class Articles(models.Model):
     full_text = models.TextField('Статья')
     author = models.CharField('Автор', max_length=50)
     tag = TaggableManager()
-    date = models.DateTimeField('Дата', default=timezone.now, blank=True)
-    image = models.ImageField('Добавить изображение', upload_to='images')
+    date = models.DateTimeField('Дата', default=timezone.now)
+    image = models.ImageField('Добавить изображение', upload_to='images', blank=True)
 
     def photo_url(self):
         if self.image and hasattr(self.image, 'url'):
