@@ -31,5 +31,5 @@ def create(request):
 
 
 def tag_list(request, tag):
-    all_news_list = Articles.objects.all()
-    return render(request, 'index.html', {'all_news_list': all_news_list, 'header': tag})
+    all_news_list = Articles.objects.filter(tag__name=tag).order_by('-date')
+    return render(request, 'homepage/index.html', {'news': all_news_list, 'header': tag})
