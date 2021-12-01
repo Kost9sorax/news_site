@@ -1,5 +1,5 @@
 from .models import Articles
-from django.forms import ModelForm, TextInput, Textarea, DateTimeInput
+from django.forms import ModelForm, TextInput, Textarea, DateTimeInput, FileInput
 
 
 class ArticlesForm(ModelForm):
@@ -9,7 +9,7 @@ class ArticlesForm(ModelForm):
 
         widgets = {
             'title': TextInput(attrs={
-                'class': 'title-of-article', 'placeholder': 'Заголовок статьи'
+                'type': "text", 'placeholder': "Title"
             }),
             'full_text': Textarea(attrs={
                 'class': 'title-of-article', 'placeholder': 'Текст статьи'
@@ -20,7 +20,7 @@ class ArticlesForm(ModelForm):
             'tag': TextInput(attrs={
                 'class': 'title-of-article', 'placeholder': 'Тэги'
             }),
-            'date': DateTimeInput(attrs={
-                'class': 'title-of-article', 'placeholder': 'Дата публикации', 'type': 'datetime-local'
-            }),
+            'image': FileInput(attrs={
+                'class': "form-control", 'id': "inputGroupFile02"
+            })
         }
