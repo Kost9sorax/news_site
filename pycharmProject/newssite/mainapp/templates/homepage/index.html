@@ -27,7 +27,9 @@
             </nav>
             <p>Published {{ i.date }} <i>by {{ i.author }}</i></p>
             <p class="main_text">{{ i.full_text }}</p>
-            <img src="{{ i.image.url }}" alt="Oops">
+            {% if i.image %}
+                <img src="{{ i.image.url }}" alt="Oops">
+            {% endif %}
         </div>
         {% endfor %}
     {% else %}
