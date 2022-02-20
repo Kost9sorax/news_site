@@ -1,9 +1,10 @@
 version: '3.9'
 services:
   web:
+    container_name: web_app
     build: .
-    command: python manage.py runserver
+    restart: on-failure
     volumes:
-      - .:/usr/src/newssite
+      - "./src:/site/src"
     ports:
       - "8000:8000"
